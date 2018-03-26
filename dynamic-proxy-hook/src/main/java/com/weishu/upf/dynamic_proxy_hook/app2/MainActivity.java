@@ -21,13 +21,34 @@ public class MainActivity extends Activity {
 
         // TODO: 16/1/28 支持Activity直接跳转请在这里Hook
         // 家庭作业,留给读者完成.
+        try {
+            HookHelper.attachActivity(MainActivity.this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        Button tv = new Button(this);
-        tv.setText("测试界面");
+        setContentView(R.layout.activity_main);
 
-        setContentView(tv);
+        Button btn_activity = (Button) findViewById(R.id.btn_activity);
+        btn_activity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setData(Uri.parse("http://www.baidu.com"));
 
-        tv.setOnClickListener(new View.OnClickListener() {
+                // 注意这里使用的ApplicationContext 启动的Activity
+                // 因为Activity对象的startActivity使用的并不是ContextImpl的mInstrumentation
+                // 而是自己的mInstrumentation, 如果你需要这样, 可以自己Hook
+                // 比较简单, 直接替换这个Activity的此字段即可.
+                startActivity(intent);
+            }
+        });
+
+        Button btn_context = (Button) findViewById(R.id.btn_context);
+
+
+        btn_context.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
