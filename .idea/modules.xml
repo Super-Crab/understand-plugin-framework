@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/aidl-client/aidl-client.iml" filepath="$PROJECT_DIR$/aidl-client/aidl-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidl-server/aidl-server.iml" filepath="$PROJECT_DIR$/aidl-server/aidl-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/ams-pms-hook/ams-pms-hook.iml" filepath="$PROJECT_DIR$/ams-pms-hook/ams-pms-hook.iml" />
       <module fileurl="file://$PROJECT_DIR$/binder-hook/binder-hook.iml" filepath="$PROJECT_DIR$/binder-hook/binder-hook.iml" />
       <module fileurl="file://$PROJECT_DIR$/classloader-hook/classloader-hook.iml" filepath="$PROJECT_DIR$/classloader-hook/classloader-hook.iml" />

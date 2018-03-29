@@ -8,6 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/aidl-client" />
+            <option value="$PROJECT_DIR$/aidl-server" />
             <option value="$PROJECT_DIR$/ams-pms-hook" />
             <option value="$PROJECT_DIR$/binder-hook" />
             <option value="$PROJECT_DIR$/classloader-hook" />
